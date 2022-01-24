@@ -48,20 +48,30 @@ public class Car {
 	public static void Hello  () {
 		System.out.println("Hello");
 	}
+	
+	public  double estimValue () {
+		double value = initialPrice;
+		if(manufacturingYear >= 2010 && brand.equals("Mercedes")) {
+			value = value / 2;
+			return value;
+		}else if (manufacturingYear <= 1980) {
+			value = value/ 6;
+			return value;
+		}else {
+			value = value/ 4;
+			return value;
+		}
+		
+	}
+	public double assurance () {
+		double value = initialPrice;
+		double assurPrice = value * 0.02;
+		return assurPrice;
+	}
 
 	
 
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Car car1 = new Car ( "Renault",2000,1998,"Rg54KLM");
-		Car car2 = new Car ( "Peugeot",7000,2008,"BJLOP890");
-		Car car3 = new Car ( "Citroën",5500,2013,"VH678NJLwx");
-		
-		Car.Hello();
-		System.out.println(car1.brand + " " + car1.initialPrice +" " + car1.manufacturingYear +" "+ car1.registrationNumber );
-		
-		
-	}
+	
 
 }
